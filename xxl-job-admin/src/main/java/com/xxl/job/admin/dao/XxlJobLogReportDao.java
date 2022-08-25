@@ -12,7 +12,7 @@ import java.util.List;
  * job log
  * @author xuxueli 2019-11-22
  *  editor by chenxh on 2021/11/1
- * TODO oracle支持调整 修改int为Integer,修改Date为Timestamp
+ * TODO oracle鏀寔璋冩暣 淇敼int涓篒nteger,淇敼Date涓篢imestamp
  */
 @Mapper
 public interface XxlJobLogReportDao {

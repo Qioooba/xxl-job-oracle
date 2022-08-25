@@ -352,7 +352,7 @@ increment by 1
 cache 20
 cycle;
 
-INSERT INTO xxl_job_group(id, app_name, title, GROUP_ORDER, address_type, address_list) VALUES (1, 'xxl-job-executor-sample', '示例执行器', 1, 0, NULL);
+INSERT INTO xxl_job_group(id, app_name, title, address_type, address_list) VALUES (1, 'xxl-job-executor-sample', '示例执行器', 1, 0, NULL);
 
 INSERT INTO xxl_job_info (
 	id,

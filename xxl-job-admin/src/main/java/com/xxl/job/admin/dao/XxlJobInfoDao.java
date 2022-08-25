@@ -13,7 +13,7 @@ import java.util.List;
  * job info
  * @author xuxueli 2016-1-12 18:03:45
  * editor by chenxh on 2021/11/1
- *TODO oracle֧�ֵ��� �޸�intΪInteger,�޸�DateΪTimestamp
+ *TODO oracle支持调整 修改int为Integer,修改Date为Timestamp
  */
 @Mapper
 public interface XxlJobInfoDao {
@@ -32,20 +32,20 @@ public interface XxlJobInfoDao {
 							 @Param("jobDesc") String jobDesc,
 							 @Param("executorHandler") String executorHandler,
 							 @Param("author") String author);
-	
+
 	public int save(XxlJobInfo info);
 
 	public XxlJobInfo loadById(@Param("id") Integer id);
-	
+
 	public int update(XxlJobInfo xxlJobInfo);
-	
+
 	public int delete(@Param("id") long id);
 
 	public List<XxlJobInfo> getJobsByGroup(@Param("jobGroup") Integer jobGroup);
 
 	public int findAllCount();
 
-	//TODO oracle֧�ֵ��� maxNextTime longת Timestamp
+	//TODO oracle支持调整 maxNextTime long转 Timestamp
 	public List<XxlJobInfo> scheduleJobQuery(@Param("maxNextTime") BigDecimal maxNextTime, @Param("pagesize") Integer pagesize );
 
 	public int scheduleUpdate(XxlJobInfo xxlJobInfo);

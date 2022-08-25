@@ -33,9 +33,12 @@ public class SampleXxlJob {
      * 1、简单任务示例（Bean模式）
      */
     @XxlJob("demoJobHandler")
-    public void demoJobHandler() throws Exception {
+    public void demoJobHandler(String str) throws Exception {
+        String aaa = str;
         XxlJobHelper.log("XXL-JOB, Hello World.");
-
+        System.out.println("XXL-JOB, Hello World.");
+        System.out.println("XXL-JOB, Hello World.");
+        System.out.println("XXL-JOB, Hello World.");
         for (int i = 0; i < 5; i++) {
             XxlJobHelper.log("beat at:" + i);
             TimeUnit.SECONDS.sleep(2);

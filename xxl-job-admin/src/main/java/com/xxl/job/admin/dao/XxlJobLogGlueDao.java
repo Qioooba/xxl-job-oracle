@@ -10,17 +10,17 @@ import java.util.List;
  * job log for glue
  * @author xuxueli 2016-5-19 18:04:56
  *  editor by chenxh on 2021/11/1
- * TODO oracle支持调整 修改int为Integer,修改Date为Timestamp
+ * TODO oracle鏀寔璋冩暣 淇敼int涓篒nteger,淇敼Date涓篢imestamp
  */
 @Mapper
 public interface XxlJobLogGlueDao {
-	
+
 	public int save(XxlJobLogGlue xxlJobLogGlue);
-	
+
 	public List<XxlJobLogGlue> findByJobId(@Param("jobId") Integer jobId);
 
 	public int removeOld(@Param("jobId") Integer jobId, @Param("limit") Integer limit);
 
 	public int deleteByJobId(@Param("jobId") Integer jobId);
-	
+
 }

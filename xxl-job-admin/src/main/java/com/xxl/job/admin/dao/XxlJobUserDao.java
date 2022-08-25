@@ -8,14 +8,14 @@ import java.util.List;
 /**
  * @author xuxueli 2019-05-04 16:44:59
  *  editor by chenxh on 2021/11/1
- * TODO oracle支持调整 修改int为Integer,修改Date为Timestamp
+ * TODO oracle鏀寔璋冩暣 淇敼int涓篒nteger,淇敼Date涓篢imestamp
  */
 @Mapper
 public interface XxlJobUserDao {
 
 	public List<XxlJobUser> pageList(@Param("offset") Integer offset,
-                                     @Param("pagesize") Integer pagesize,
-                                     @Param("username") String username,
+									 @Param("pagesize") Integer pagesize,
+									 @Param("username") String username,
 									 @Param("role") Integer role);
 	public int pageListCount(@Param("offset") Integer offset,
 							 @Param("pagesize") Integer pagesize,
@@ -27,7 +27,7 @@ public interface XxlJobUserDao {
 	public int save(XxlJobUser xxlJobUser);
 
 	public int update(XxlJobUser xxlJobUser);
-	
+
 	public int delete(@Param("id") Integer id);
 
 }

@@ -6,10 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
@@ -36,7 +33,21 @@ public class SampleXxlJob {
      */
     @XxlJob("demoJobHandler")
     public void demoJobHandler() throws Exception {
+        String jobParam = XxlJobHelper.getJobParam();
+        System.out.println(jobParam);
         XxlJobHelper.log("XXL-JOB, Hello World.");
+
+        Process process = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",jobParam},null,null);
+        InputStreamReader ir = new InputStreamReader(process.getInputStream());
+        LineNumberReader input = new LineNumberReader(ir);
+        String line;
+        process.waitFor();
+        while ((line = input.readLine()) != null){
+            System.out.println(line);
+            XxlJobHelper.log(line);
+        }
+
+
 
         for (int i = 0; i < 5; i++) {
             XxlJobHelper.log("beat at:" + i);
