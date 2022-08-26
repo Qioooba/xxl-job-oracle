@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 /**
  * Created by xuxueli on 16/9/30.
  *  editor by chenxh on 2021/11/1
- *  TODO oracle支持调整 修改Date为Timestamp
+ *  TODO oracle鏀寔璋冩暣 淇敼Date涓篢imestamp
  */
 public class XxlJobRegistry {
 

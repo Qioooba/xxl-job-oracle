@@ -6,7 +6,7 @@ import java.sql.Timestamp;
  * xxl-job log for glue, used to track job code process
  * @author xuxueli 2016-5-19 17:57:46
  * editor by chenxh on 2021/11/1
- * TODO oracle支持调整 修改Date为Timestamp
+ * TODO oracle鏀寔璋冩暣 淇敼Date涓篢imestamp
  */
 public class XxlJobLogReport {
 

@@ -62,13 +62,13 @@ public class JobRegistryHelper {
 						// auto registry group
 						List<XxlJobGroup> groupList = XxlJobAdminConfig.getAdminConfig().getXxlJobGroupDao().findByAddressType(0);
 						if (groupList!=null && !groupList.isEmpty()) {
-							//TODO oracle支持调整 此处修改日期类型 new Timestamp(new Date().getTime())
+							//TODO oracle鏀寔璋冩暣 姝ゅ淇敼鏃ユ湡绫诲瀷 new Timestamp(new Date().getTime())
 							// remove dead address (admin/executor)
 							List<Integer> ids = XxlJobAdminConfig.getAdminConfig().getXxlJobRegistryDao().findDead(RegistryConfig.DEAD_TIMEOUT, new Timestamp(new Date().getTime()));
 							if (ids!=null && ids.size()>0) {
 								XxlJobAdminConfig.getAdminConfig().getXxlJobRegistryDao().removeDead(ids);
 							}
-							//TODO oracle支持调整 此处修改日期类型 new Timestamp(new Date().getTime())
+							//TODO oracle鏀寔璋冩暣 姝ゅ淇敼鏃ユ湡绫诲瀷 new Timestamp(new Date().getTime())
 							// fresh online address (admin/executor)
 							HashMap<String, List<String>> appAddressMap = new HashMap<String, List<String>>();
 							List<XxlJobRegistry> list = XxlJobAdminConfig.getAdminConfig().getXxlJobRegistryDao().findAll(RegistryConfig.DEAD_TIMEOUT, new Timestamp(new Date().getTime()));
@@ -103,7 +103,7 @@ public class JobRegistryHelper {
 									addressListStr = addressListStr.substring(0, addressListStr.length()-1);
 								}
 								group.setAddressList(addressListStr);
-								//TODO oracle支持调整  new Timestamp(new Date().getTime())
+								//TODO oracle鏀寔璋冩暣  new Timestamp(new Date().getTime())
 								group.setUpdateTime(new Timestamp(new Date().getTime()));
 
 								XxlJobAdminConfig.getAdminConfig().getXxlJobGroupDao().update(group);
@@ -161,10 +161,10 @@ public class JobRegistryHelper {
 		registryOrRemoveThreadPool.execute(new Runnable() {
 			@Override
 			public void run() {
-				//TODO oracle支持调整 此处修改日期类型 new Timestamp(new Date().getTime())
+				//TODO oracle鏀寔璋冩暣 姝ゅ淇敼鏃ユ湡绫诲瀷 new Timestamp(new Date().getTime())
 				int ret = XxlJobAdminConfig.getAdminConfig().getXxlJobRegistryDao().registryUpdate(registryParam.getRegistryGroup(), registryParam.getRegistryKey(), registryParam.getRegistryValue(), new Timestamp(new Date().getTime()));
 				if (ret < 1) {
-					//TODO oracle支持调整 此处修改日期类型 new Timestamp(new Date().getTime())
+					//TODO oracle鏀寔璋冩暣 姝ゅ淇敼鏃ユ湡绫诲瀷 new Timestamp(new Date().getTime())
 					XxlJobAdminConfig.getAdminConfig().getXxlJobRegistryDao().registrySave(registryParam.getRegistryGroup(), registryParam.getRegistryKey(), registryParam.getRegistryValue(), new Timestamp(new Date().getTime()));
 
 					// fresh
